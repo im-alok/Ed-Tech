@@ -21,7 +21,7 @@ app.use(fileUpload({
 }));
 
 app.use(cors({
-    origin:'https://ed-tech-coral.vercel.app',
+    origin:'https://ed-tech-chi.vercel.app',
     credentials:true
 }))
 
