@@ -41,19 +41,23 @@ export function login(email, password, navigate) {
                 password: password,
             });
             console.log(response);
-            if (!response.data.success) {
-                throw new Error(response.data.message);
+            if (!response?.data?.success) {
+                toast.dismiss(toastId);
+                throw new Error(response?.data?.message);
             }
-            dispatch(setToken(response.data.token));
-            dispatch(setUser(response.data.userDetails));
-            toast.success(response.data.message);
-            localStorage.setItem("token", JSON.stringify(response.data.token));
-            localStorage.setItem("user", JSON.stringify(response.data.userDetails));
-            navigate('/dashboard');
+            if(response?.data){
+                dispatch(setToken(response?.data?.token));
+                dispatch(setUser(response?.data?.userDetails));
+                toast.success(response?.data?.message);
+                localStorage.setItem("token", JSON.stringify(response?.data?.token));
+                localStorage.setItem("user", JSON.stringify(response?.data?.userDetails));
+                navigate('/dashboard'); 
+            }
 
         }
         catch (error) {
-            toast.error(error.response.data.message);
+            console.log(error)
+            toast.error(error?.response?.data?.message);
         }
         dispatch(setLoading(false));
         toast.dismiss(toastId);

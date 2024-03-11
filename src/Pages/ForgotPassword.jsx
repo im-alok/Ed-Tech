@@ -18,13 +18,13 @@ function ForgotPassword(){
         dispatch(sendForgotPasswordToken(email,setEmailSent));
     }
     return(
-        <div className="mx-auto w-11/12">
+        <div className="mt-10 sm:mt-0 mx-auto w-11/12">
 
-            <div className="h-[500px] flex  justify-center items-center">
+            <div className="sm:h-[500px] flex  justify-center items-center">
                 {
-                    loading?(<div>Loading...</div>)
+                    loading?(<div className="text-richblack-25">Loading...</div>)
                     :(
-                        <div className="flex flex-col gap-5 w-4/12">
+                        <div className="flex flex-col gap-5  sm:w-4/12">
                             <h1 className="font-inter font-semibold text-3xl text-richblack-5">
                                 {
                                     !emailSent ? "Reset Your Password" : "Check Email"
