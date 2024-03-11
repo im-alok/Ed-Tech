@@ -21,7 +21,7 @@ app.use(fileUpload({
 }));
 
 app.use(cors({
-    origin:'http://localhost:3000',
+    origin:'https://ed-tech-coral.vercel.app/',
     credentials:true
 }))
 
