@@ -1,7 +1,7 @@
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const tags ={
-    TAG_API : BASE_URL + "/courses/getAllTags",
+    TAG_API : "https://ed-tech-n661.onrender.com/courses/getAllTags",
 }
 
 export const Auth ={
