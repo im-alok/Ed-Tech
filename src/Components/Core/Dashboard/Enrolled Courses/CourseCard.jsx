@@ -2,7 +2,7 @@ import ProgressBar from '@ramonak/react-progress-bar'
 import { Link } from 'react-router-dom';
 
 function CourseCard({course}){
-    // console.log(course);
+    console.log(course._id);
     return(
         <Link to={`/view-course/${course._id}/section/${course?.courseContent[0]._id}/sub-section/${course?.courseContent[0]?.subSection[0]?._id}`}>
         

@@ -45,7 +45,7 @@ function ViewCourse(){
 
     return(
         <div>
-            <div className="flex flex-wrap sm:flex-nowrap gap-10 sm:gap-5">
+            <div className=" mx-auto flex flex-wrap sm:flex-nowrap gap-16 sm:gap-5">
                 <VideoDetailsSideBar reviewModal={reviewModal} setReviewModal={setReviewModal}/>
 
                 <div className="min-h-[calc(100vh-7.23rem)] w-full sm:w-[80%] mb-10">

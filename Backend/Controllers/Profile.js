@@ -221,7 +221,9 @@ exports.getEnrolledCourses = async (req, res) => {
             success: true,
             data: userDetails.courseEnrolled,
         })
-        } catch (error) {
+        } 
+        
+        catch (error) {
         return res.status(500).json({
             success: false,
             message: error.message,

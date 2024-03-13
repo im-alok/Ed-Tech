@@ -64,7 +64,7 @@ function VideoDetails(){
 
         if(isVideoEnded)
             setIsVideoEnded(false);
-        console.log(location.pathname)
+        // console.log(location.pathname)
 
     },[courseEntireData,courseSectionData,location.pathname])
 
@@ -166,7 +166,7 @@ function VideoDetails(){
     
     return(
         <>
-            <div className="text-white relative">
+            <div className="text-white relative ">
                 {
                     !videoData ? (<p>No Data Found</p>)
                     : (
@@ -247,9 +247,9 @@ function VideoDetails(){
                     )
                 }
 
-                <div>
-                    <h1>{videoData?.title}</h1>
-                    <p>{videoData?.description}</p>
+                <div className="sm:mt-5 mt-5 flex flex-col sm:gap-3">
+                    <h1 className="text-richblack-300 font-bold">{videoData?.title}</h1>
+                    <p className="text-richblack-100 text-sm">{videoData?.description}</p>
                 </div>
             </div>
         </>
