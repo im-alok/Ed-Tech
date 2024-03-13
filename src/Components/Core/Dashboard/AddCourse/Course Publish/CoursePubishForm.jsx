@@ -83,7 +83,7 @@ function CoursePubishForm(){
                         Make this course Public
                     </label>
                     {
-                        errors.public && <span className="text-sm text-pink-300">Please publish your course</span>
+                        errors.public && <p className="text-sm text-pink-300 font-bold ">Please publish your course</p>
                     }
                 </div>
 
