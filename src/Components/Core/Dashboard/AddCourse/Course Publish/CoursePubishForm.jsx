@@ -74,7 +74,7 @@ function CoursePubishForm(){
                     <input 
                     type="checkbox"
                     id="public"
-                    {...register('public')}
+                    {...register('public',{required:true})}
                     className="w-16"
                     />
                     <label htmlFor="public"
@@ -82,6 +82,9 @@ function CoursePubishForm(){
                     >
                         Make this course Public
                     </label>
+                    {
+                        errors.public && <span className="text-sm text-pink-300">Please publish your course</span>
+                    }
                 </div>
 
                 <div className="flex gap-3 flex-row-reverse">

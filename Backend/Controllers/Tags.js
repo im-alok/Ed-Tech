@@ -62,7 +62,7 @@ exports.tagsPageDetails = async(req,res) =>{
         const {tagId} = req.query;
         // console.log(tagId)
         //get course for specified tags
-        const selectedTags = await tags.findById(tagId).populate(
+        let selectedTags = await tags.findById(tagId).populate(
                                         {
                                             path:"courses",
                                             populate:{
@@ -71,7 +71,14 @@ exports.tagsPageDetails = async(req,res) =>{
                                             }
                                         }
         ).exec();
+        
+        if(selectedTags){
+            const selectedTagsCourse =  selectedTags?.courses?.filter((course)=>course.status === 'Published');
+            selectedTags.courses = selectedTagsCourse;
+            // console.log(selectedTags);
+        }
 
+        // console.log(selectedTags);
         //check if courses are available or not
         // if(!selectedTags){
         //     return res.status(400).json({
@@ -90,6 +97,12 @@ exports.tagsPageDetails = async(req,res) =>{
                 }
             }
         ).exec();
+        
+        if(differentTags){
+            const differentTagsCourse =  differentTags?.courses?.filter((course)=>course.status === 'Published');
+            differentTags.courses = differentTagsCourse;
+            // console.log(selectedTags);
+        }
 
         return res.status(200).json({
             success:true,

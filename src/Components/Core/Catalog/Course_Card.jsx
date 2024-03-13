@@ -40,7 +40,7 @@ function Course_Card({course,Height}){
                         />
                     </div>
 
-                    <div className="flfex flex-col gap-1">
+                    <div className="flex flex-col gap-1">
                         {/* CourseTitle */}
                         <p className="mt-2 text-2xl font-bold  ">{course.courseName}</p>
 

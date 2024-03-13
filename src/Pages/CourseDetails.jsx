@@ -156,11 +156,11 @@ function CourseDetails(){
     return(
         <div className="">
             <div className="bg-richblack-800 h-[450px]">
-                <div className="w-10/12 mx-auto flex sm:flex-row sm:justify-between sm:flex-nowrap flex-wrap-reverse gap-10 sm:gap-0">
-                    <div className="flex flex-col gap-3 sm:mt-28">
+                <div className="w-10/12 mx-auto flex lg:flex-row lg:justify-between lg:flex-nowrap flex-wrap-reverse gap-10 lg:gap-0">
+                    <div className="flex flex-col gap-3 lg:mt-28">
                         <p className="text-3xl font-bold text-richblack-5">{courseDetails?.courseName}</p>
                         <p className="text-richblack-300">{courseDetails?.courseDescription}</p>
-                        <div className="flex flex-col sm:flex-row gap-2">
+                        <div className="flex flex-col lg:flex-row gap-2">
                             <div className="flex flex-row gap-2">
                                 <p className="text-yellow-50">{averageRating || 0}</p>
                                 <RatingStars Review_Count={averageRating}/>
@@ -172,7 +172,7 @@ function CourseDetails(){
                         </div>
                         <p className="font-bold text-caribbeangreen-100">Created By {courseDetails?.instructor?.firstName} {courseDetails?.instructor?.lastName}</p>
 
-                        <div className="flex flex-col sm:flex-row gap-2">
+                        <div className="flex flex-col lg:flex-row gap-2">
                             <div className="text-richblack-25 flex gap-1 items-center">
                                 <IoIosTime />
                                 <p>Created At</p>
@@ -193,7 +193,7 @@ function CourseDetails(){
                     {
                         user?.accountType === ACCOUNT_TYPE.INSTRUCTOR
                         ? (
-                            <div className="flex flex-col gap-3 bg-richblack-700 p-10 rounded-md w-[400px] sm:mt-24 mt-10">
+                            <div className="flex flex-col gap-3 bg-richblack-700 p-10 rounded-md w-[400px] lg:mt-24 mt-10">
                                 <img 
                                 src={courseDetails?.thumbnail}
                                 width={350}
@@ -217,7 +217,7 @@ function CourseDetails(){
                             </div>
                         )
                         :(
-                            <div className="flex flex-col gap-3 bg-richblack-700 p-10 rounded-md w-[400px] sm:mt-24 mt-10">
+                            <div className="flex flex-col gap-3 bg-richblack-700 p-10 rounded-md w-[400px] lg:mt-24 mt-10">
                         <img 
                         src={courseDetails?.thumbnail}
                         width={350}
@@ -271,8 +271,8 @@ function CourseDetails(){
                 </div>
             </div>
 
-            <div className="w-11/12 sm:w-10/12 mx-auto flex flex-col gap-5 mt-96 sm:mt-0">
-                <div className="flex flex-col gap-2 mt-10 border border-richblack-500 sm:w-[750px] p-5 py-8 rounded-md">
+            <div className="w-11/12 lg:w-10/12 mx-auto flex flex-col gap-5 mt-[500px] lg:mt-0">
+                <div className="flex flex-col gap-2 mt-10 border border-richblack-500 lg:w-[750px] p-5 py-8 rounded-md">
                     <p className="text-3xl text-richblack-5">What You Will Learn</p>
                     <ul>
                         <li className="text-richblack-5">{courseDetails?.whatYouWillLearn}</li>
@@ -280,13 +280,13 @@ function CourseDetails(){
                 </div>
 
                 {/* Course Content and Subsection */}
-                <div className="text-white mt-3 flex flex-col gap-3 sm:w-[70%]">
+                <div className="text-white mt-3 flex flex-col gap-3  lg:w-[60%]">
                     <div>
-                        <p className="text-3xl sm:font-medium font-bold">Course Content</p>
+                        <p className="text-3xl lg:font-medium font-bold">Course Content</p>
                     </div>
 
                     <div className="flex justify-between ">
-                        <div className="flex flex-col sm:flex-row gap-2 text-sm text-richblack-100">
+                        <div className="flex flex-col lg:flex-row gap-2 text-lg text-richblack-100">
                             <p>{courseDetails?.courseContent?.length} Section(s)</p>
                             <p>{lectureCount} lecture(s)</p>
                             <p>{courseDetails?.totalDuration} total length</p>

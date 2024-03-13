@@ -362,19 +362,21 @@ exports.getInstructorCourse = async (req,res)=>{
         let Courses = [];
 
         instructorCourse.courseEnrolled.forEach((course)=>{
-            let totalDurationInSeconds = 0
+            if(course?.status === 'Published'){
+                let totalDurationInSeconds = 0
 
-            course.courseContent.forEach((content) => {
-                content.subSection.forEach((subSection) => {
-                    const timeDurationInSeconds = parseInt(subSection.timeDuration)
-                    totalDurationInSeconds += timeDurationInSeconds
+                course.courseContent.forEach((content) => {
+                    content.subSection.forEach((subSection) => {
+                        const timeDurationInSeconds = parseInt(subSection.timeDuration)
+                        totalDurationInSeconds += timeDurationInSeconds
+                    })
                 })
-            })
-            
-            const totalDuration = convertSecondsToDuration(totalDurationInSeconds)
-            course = course.toObject();
-            course.totalDuration = totalDuration
-            Courses.push(course)
+                
+                const totalDuration = convertSecondsToDuration(totalDurationInSeconds)
+                course = course.toObject();
+                course.totalDuration = totalDuration
+                Courses.push(course)
+            }
         })
         // console.log(Courses)
 
