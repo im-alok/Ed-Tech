@@ -22,7 +22,7 @@ app.use(fileUpload({
 }));
 
 app.use(cors({
-    origin: process.env.origin,
+    origin: "*",
     credentials: true
 }))
 
